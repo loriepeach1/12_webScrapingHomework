@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 import scrape_mars
 
@@ -23,8 +23,10 @@ def scrape():
     mars = mongo.db.mars
     mars_data = scrape_mars.scrape_all()
     mars.update({}, mars_data, upsert=True)
-    return "Scraping Successful!"
-
+    #return "Scraping Successful!"
+    
+    # Redirect back to home page
+    return redirect("/")
 
 if __name__ == "__main__":
     app.run()

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Information</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get the Latest Data</a></p>
+    </div>
+
+	<!--   NEWS SECTION -->
+	<h1> Latest Mars News </h1>
+	<h3>{{mars.news_title}}</h3>
+    <p>{{ mars.news_paragraph }}
+
+	<HR>
+	
+	<!--   WEATHER SECTION -->
+	<h1> Current Weather </h1>
+	{{mars.weather}}
+		
+	<HR>
+	
+	<!--   FACTS SECTION -->
+	<!--  ??  need help.   How do I get this to display as a table?? -->
+	<h1> Mars Facts </h1>
+	{{mars.facts}}
+		
+	<HR>
+	
+	<!--   FEATURED IMAGE SECTION -->
+	<h1> Featured Mars Image </h1>
+	<p>
+	<img src="{{ mars.featured_image }}" alt="Featured Mars Image">
+	
+	<HR>
+		
+	<!--   HEMISPHERE SECTION -->
+	<!--  ??  need help.   How do I get the individual entries to display?? -->
+	<table border = 1 padding="5" align="center">
+	<tr>
+		<td colspan="2" align="center"><H1>Mars Hemispheres</H1></td>
+
+	</tr>
+	
+	<tr>
+		<td>{{mars.news_title}}</td>
+		<td>{{mars.news_title}}</td>
+	</tr>
+	<tr>
+		<td>{{mars.news_title}}</td>
+		<td>{{mars.news_title}}</td>
+	</tr>
+	</table>
+
+
+<HR>
+<P>  I can show the hemisphere library.  But not sure how to pull out individual sections.
+<p>  {{ mars.hemispheres }}
+
+
+  </div>
+</body>
+
+</html>
+
